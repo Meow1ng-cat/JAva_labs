@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Worker Information</title>
+</head>
+<body>
+    <h2>Информация о работниках</h2>
+
+    <h3>Программист</h3>
+    <div>
+        <p>Имя: <span th:text="${programmer.firstName}"></span></p>
+        <p>Фамилия: <span th:text="${programmer.lastName}"></span></p>
+        <p>Зарплата: <span th:text="${programmer.salary}"></span></p>
+        <p>Рабочие часы: <span th:text="${programmer.workHours}"></span></p>
+    </div>
+
+    <h3>Строитель</h3>
+    <div>
+        <p>Имя: <span th:text="${builder.firstName}"></span></p>
+        <p>Фамилия: <span th:text="${builder.lastName}"></span></p>
+        <p>Зарплата: <span th:text="${builder.salary}"></span></p>
+        <p>Рабочие часы: <span th:text="${builder.workHours}"></span></p>
+    </div>
+
+    <h3>Охранник</h3>
+    <div>
+        <p>Имя: <span th:text="${guard.firstName}"></span></p>
+        <p>Фамилия: <span th:text="${guard.lastName}"></span></p>
+        <p>Зарплата: <span th:text="${guard.salary}"></span></p>
+        <p>Рабочие часы: <span th:text="${guard.workHours}"></span></p>
+    </div>
+</body>
+</html>

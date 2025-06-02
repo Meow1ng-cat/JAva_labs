@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Список работников</title>
+</head>
+<body>
+    <h1>Список всех работников</h1>
+
+    <p><a href="/worker/new">Добавить нового работника</a></p>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Имя</th>
+                <th>Фамилия</th>
+                <th>Зарплата</th>
+                <th>Рабочие часы</th>
+                <th>Действия</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="worker, stat : ${workers}">
+                <td th:text="${worker.firstName}"></td>
+                <td th:text="${worker.lastName}"></td>
+                <td th:text="${worker.salary}"></td>
+                <td th:text="${worker.workHours}"></td>
+                <td>
+                    <a th:href="@{'/worker/' + ${stat.index}}">Подробнее</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html> 

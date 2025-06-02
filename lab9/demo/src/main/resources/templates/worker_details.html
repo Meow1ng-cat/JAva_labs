@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Информация о работнике - ' + ${worker.firstName}"></title>
+</head>
+<body>
+    <h1>Подробная информация о работнике</h1>
+    
+    <div>
+        <h2 th:text="${
+            type == 'programmer' ? 'Программист' :
+            type == 'builder' ? 'Строитель' : 'Охранник'
+        }"></h2>
+        
+        <dl>
+            <dt>Имя:</dt>
+            <dd th:text="${worker.firstName}"></dd>
+            
+            <dt>Фамилия:</dt>
+            <dd th:text="${worker.lastName}"></dd>
+            
+            <dt>Зарплата:</dt>
+            <dd th:text="${worker.salary}"></dd>
+            
+            <dt>Рабочие часы:</dt>
+            <dd th:text="${worker.workHours}"></dd>
+        </dl>
+    </div>
+    
+    <p><a href="/home">Вернуться к списку</a></p>
+</body>
+</html> 
